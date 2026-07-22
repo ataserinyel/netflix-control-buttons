@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix Control Buttons",
+  "author": "Ata Serinyel",
+  "homepage_url": "https://github.com/ataserinyel/netflix-seek-buttons",
+  "version": "1.0.0",
+  "description": "Adds clickable fast-forward buttons to the netflix control bar.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.netflix.com/*",
+    "https://netflix.com/*"
+  ],
+  "action": {
+    "default_title": "Netflix Control Buttons",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.netflix.com/*",
+        "https://netflix.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}
